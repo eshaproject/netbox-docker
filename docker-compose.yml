@@ -8,11 +8,12 @@ services:
       - redis-cache
     env_file: env/netbox.env
     user: "unit:root"
-    healthcheck:
-      test: curl -f http://localhost:8080/login/ || exit 1
-      start_period: 360s
-      timeout: 3s
-      interval: 15s
+    #healthcheck:
+    #  test: curl -f http://localhost:8080/login/ || exit 1
+    #  start_period: 360s
+    #  timeout: 3s
+    #  interval: 15s
+    restart: always
     volumes:
       - ./configuration:/etc/netbox/config:z,ro
       - netbox-media-files:/opt/netbox/netbox/media:rw
