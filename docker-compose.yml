@@ -1,6 +1,6 @@
 services:
   netbox: &netbox
-    image: lscr.io/linuxserver/netbox:latest
+    image: docker.io/alpinelinux/netbox:latest-aarch64
     #image: docker.io/netboxcommunity/netbox:${VERSION-v4.4-3.4.1}
     depends_on:
       - postgres
